@@ -1,0 +1,21 @@
+﻿<Page
+    x:Class="AdminProject.View.Connexion"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AdminProject.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBlock Name="txtcnxadmin" Text="Connexuin Admin" HorizontalAlignment="Center" FontSize="30" Margin="50"/>
+            <TextBox Name="txtemail" PlaceholderText="email"  Margin="20"/>
+            <PasswordBox Name="txtmotdepasse" PlaceholderText="mot de passe "  Margin="20"/>
+            <Button Name="txtconnect" Content="se connecter" Margin="15" HorizontalAlignment="Center" />
+            <TextBlock Name="txtrecuperer" Text="recupere mot de passe" Margin="10" HorizontalAlignment="Center"/>
+        </StackPanel>
+        
+
+    </Grid>
+</Page>
