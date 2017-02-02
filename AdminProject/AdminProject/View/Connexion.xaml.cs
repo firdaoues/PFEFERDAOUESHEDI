@@ -26,5 +26,10 @@ namespace AdminProject.View
         {
             this.InitializeComponent();
         }
+
+        private void txtcnxadmin_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
