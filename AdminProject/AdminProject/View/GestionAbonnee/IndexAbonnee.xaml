@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="AdminProject.View.GestionAbonnee.IndexAbonnee"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AdminProject.View.GestionAbonnee"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="White">
+        <Pivot>
+            <PivotItem Header="Gestion Abonnée">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="405*"/>
+                        <ColumnDefinition Width="211*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <ListView Name="afficheabonnee">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding cin}" Margin="10"/>
+                                        <TextBlock Text="{Binding nom}" Margin="10"/>
+                                        <TextBlock Text="{Binding prenom}" Margin="10"/>
+                                        <TextBlock Text="{Binding datedenaissance}" Margin="10"/>
+                                        <TextBlock Text="{Binding email}" Margin="10"/>
+                                        <TextBlock Text="{Binding tel}" Margin="10"/>
+                                    </StackPanel> 
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <StackPanel >
+                            <TextBox Name="txtcin" PlaceholderText="CIN" Margin="5" LostFocus="txtcin_LostFocus" GotFocus="txtcin_GotFocus"/>
+                            <TextBox Name="txtnom" PlaceholderText="Nom" Margin="5" LostFocus="txtnom_LostFocus" GotFocus="txtnom_GotFocus"/>
+                            <TextBox Name="txtprenom" PlaceholderText="prenom" Margin="5" LostFocus="txtprenom_LostFocus" GotFocus="txtprenom_GotFocus"/>
+                            <DatePicker Name="txtdatenaissance" Margin="5" LostFocus="txtdatenaissance_LostFocus" GotFocus="txtdatenaissance_GotFocus"/>
+                            <TextBox Name="txtemail" PlaceholderText="Email" Margin="5" LostFocus="txtemail_LostFocus" GotFocus="txtemail_GotFocus"/>
+                            <TextBox Name="txttel" PlaceholderText="Telephone" Margin="5" LostFocus="txttel_LostFocus" GotFocus="txttel_GotFocus"/>
+                            <PasswordBox Name="txtmotdepasse" PlaceholderText="Mot de passe" Margin="5" LostFocus="txtmotdepasse_LostFocus" Holding="txtmotdepasse_Holding"/>
+                            <StackPanel Orientation="Horizontal">
+                            </StackPanel>    
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar Background="Black" Foreground="White">
+            <CommandBar.Content>
+                <StackPanel Orientation="Horizontal">
+                    <AppBarButton Name="btnaccueil" Icon="Home" Foreground="White"/>
+                    <AutoSuggestBox x:Name="txtrecherche" Margin="10" PlaceholderText="rechercher" Width="200" />
+                </StackPanel>
+            </CommandBar.Content>
+            <AppBarButton Name="btnajout" Icon="Add" Label="Ajouter" Foreground="White"/>
+            <AppBarButton Name="btnmodifier" Icon="Edit" Label="Modifier" Foreground="White"/>
+            <AppBarButton Name="btnsupprimer" Icon="Delete" Label="Supprimer" Foreground="White"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

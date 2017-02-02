@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel>
-            <TextBlock Name="txtcnxadmin" Text="Connexuin Admin" HorizontalAlignment="Center" FontSize="30" Margin="50"/>
+            <TextBlock Name="txtcnxadmin" Text="Connexuin Admin" HorizontalAlignment="Center" FontSize="30" Margin="50" LostFocus="txtcnxadmin_LostFocus"/>
             <TextBox Name="txtemail" PlaceholderText="email"  Margin="20"/>
             <PasswordBox Name="txtmotdepasse" PlaceholderText="mot de passe "  Margin="20"/>
             <Button Name="txtconnect" Content="se connecter" Margin="15" HorizontalAlignment="Center" />
