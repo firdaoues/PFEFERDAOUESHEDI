@@ -98,13 +98,22 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Model\Abonnee.cs" />
+=======
+    <Compile Include="Model\Lieu.cs" />
+>>>>>>> refs/remotes/origin/master
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\Connexion.xaml.cs">
       <DependentUpon>Connexion.xaml</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="View\GestionAbonnee\IndexAbonnee.xaml.cs">
       <DependentUpon>IndexAbonnee.xaml</DependentUpon>
+=======
+    <Compile Include="View\GestionDesLIeux\IndexLieux.xaml.cs">
+      <DependentUpon>IndexLieux.xaml</DependentUpon>
+>>>>>>> refs/remotes/origin/master
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -136,7 +145,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+<<<<<<< HEAD
     <Page Include="View\GestionAbonnee\IndexAbonnee.xaml">
+=======
+    <Page Include="View\GestionDesLIeux\IndexLieux.xaml">
+>>>>>>> refs/remotes/origin/master
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
