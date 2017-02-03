@@ -14,8 +14,8 @@ namespace AdminProject.Model
 
         public String adresse { get; set; }
 
-        public int langitude { get; set; }
+        public Double langitude { get; set; }
 
-        public int latitude { get; set; }
+        public Double latitude { get; set; }
     }
 }

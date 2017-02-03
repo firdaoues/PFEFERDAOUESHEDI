@@ -16,7 +16,7 @@
                         <ColumnDefinition Width="23*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <ListView Name="affichelieux" >
+                        <ListView Name="affichelieux" SelectionChanged="affichelieux_SelectionChanged" >
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -36,17 +36,12 @@
                             <TextBox Name="txtadresse" PlaceholderText="adresse" FontSize="20"  Margin="10" LostFocus="txtadresse_LostFocus" GotFocus="txtadresse_GotFocus" />
                             <TextBox Name="txtlangitude" PlaceholderText="langitude" FontSize="20"  Margin="10" LostFocus="txtlangitude_LostFocus" GotFocus="txtlangitude_GotFocus" />
                             <TextBox Name="txtlatitude" PlaceholderText="latitude" FontSize="20"  Margin="10" LostFocus="txtlatitude_LostFocus" GotFocus="txtlatitude_GotFocus" />
-
-
-
-
                         </StackPanel>
                     </Grid>
                 </Grid>
                 
             </PivotItem>
         </Pivot>
-
     </Grid>
     <Page.BottomAppBar>
         <CommandBar Background="Black" Foreground="White">
@@ -56,10 +51,9 @@
                     <TextBox x:Name="txtrecherche" Margin="10" PlaceholderText="rechercher"/>
                 </StackPanel>
             </CommandBar.Content>
-            <AppBarButton Name="btnajout" Icon="Add" Foreground="white"/>
-            <AppBarButton Name="btnmodifier" Icon="Edit" Foreground="White"/>
-            <AppBarButton Name="btnsupprimer" Icon="Delete" Foreground="White"/>
-
+            <AppBarButton Name="btnajout" Icon="Add" Foreground="white" Click="btnajout_Click"/>
+            <AppBarButton Name="btnmodifier" Icon="Edit" Foreground="White" Click="btnmodifier_Click"/>
+            <AppBarButton Name="btnsupprimer" Icon="Delete" Foreground="White" Click="btnsupprimer_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>
