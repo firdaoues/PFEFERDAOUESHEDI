@@ -16,7 +16,7 @@
                         <ColumnDefinition Width="211*"/>
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0">
-                        <ListView Name="afficheabonnee">
+                        <ListView Name="afficheabonnee" SelectionChanged="afficheabonnee_SelectionChanged">
                             <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -39,7 +39,7 @@
                             <DatePicker Name="txtdatenaissance" Margin="5" LostFocus="txtdatenaissance_LostFocus" GotFocus="txtdatenaissance_GotFocus"/>
                             <TextBox Name="txtemail" PlaceholderText="Email" Margin="5" LostFocus="txtemail_LostFocus" GotFocus="txtemail_GotFocus"/>
                             <TextBox Name="txttel" PlaceholderText="Telephone" Margin="5" LostFocus="txttel_LostFocus" GotFocus="txttel_GotFocus"/>
-                            <PasswordBox Name="txtmotdepasse" PlaceholderText="Mot de passe" Margin="5" LostFocus="txtmotdepasse_LostFocus" Holding="txtmotdepasse_Holding"/>
+                            <PasswordBox Name="txtmotdepasse" PlaceholderText="Mot de passe" Margin="5" LostFocus="txtmotdepasse_LostFocus" GotFocus="txtmotdepasse_GotFocus"/>
                             <StackPanel Orientation="Horizontal">
                             </StackPanel>    
                         </StackPanel>
@@ -57,9 +57,9 @@
                     <AutoSuggestBox x:Name="txtrecherche" Margin="10" PlaceholderText="rechercher" Width="200" />
                 </StackPanel>
             </CommandBar.Content>
-            <AppBarButton Name="btnajout" Icon="Add" Label="Ajouter" Foreground="White"/>
-            <AppBarButton Name="btnmodifier" Icon="Edit" Label="Modifier" Foreground="White"/>
-            <AppBarButton Name="btnsupprimer" Icon="Delete" Label="Supprimer" Foreground="White"/>
+            <AppBarButton Name="btnajout" Icon="Add" Label="Ajouter" Foreground="White" Click="btnajout_Click"/>
+            <AppBarButton Name="btnmodifier" Icon="Edit" Label="Modifier" Foreground="White" Click="btnmodifier_Click"/>
+            <AppBarButton Name="btnsupprimer" Icon="Delete" Label="Supprimer" Foreground="White" Click="btnsupprimer_Click"/>
         </CommandBar>
     </Page.BottomAppBar>
 </Page>

@@ -12,7 +12,7 @@ namespace AdminProject.Model
         public int cin  { get; set; }
         public String nom { get; set; }
         public String prenom { get; set; }
-        public String datedenaissance { get; set; }
+        public DateTime datedenaissance { get; set; }
         public String email { get; set; }
         public int tel { get; set; }
         public String motdepasse { get; set; }
