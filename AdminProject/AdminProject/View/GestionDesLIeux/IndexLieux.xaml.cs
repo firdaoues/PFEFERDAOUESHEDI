@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
@@ -59,7 +60,8 @@ namespace AdminProject.View.GestionDesLIeux
 
         private void txtnom_LostFocus(object sender, RoutedEventArgs e)
         {
-            bool test = txtnom.Text.All(char.IsLetter);
+            Regex regex = new Regex(@"^[a-zA-Z ]+$");
+            bool test = regex.IsMatch(txtnom.Text);
             if (txtnom.Text == "" || test == false)
             {
                 txtnom.BorderBrush = new SolidColorBrush(Windows.UI.Colors.Red);
@@ -81,7 +83,8 @@ namespace AdminProject.View.GestionDesLIeux
 
         private void txtadresse_LostFocus(object sender, RoutedEventArgs e)
         {
-            bool test = txtadresse.Text.All(char.IsLetterOrDigit);
+            Regex regex = new Regex(@"^[a-zA-Z ]+$");
+            bool test = regex.IsMatch(txtadresse.Text);
             if (txtadresse.Text == "" || test == false)
             {
                 txtadresse.BorderBrush = new SolidColorBrush(Windows.UI.Colors.Red);
@@ -98,7 +101,8 @@ namespace AdminProject.View.GestionDesLIeux
 
         private void txtlangitude_LostFocus(object sender, RoutedEventArgs e)
         {
-            bool test = txtlangitude.Text.All(char.IsDigit);
+            Double x = 0;
+            bool test = Double.TryParse(txtlangitude.Text, out x);
             if (txtlangitude.Text == "" || test == false)
             {
                 txtlangitude.BorderBrush = new SolidColorBrush(Windows.UI.Colors.Red);
@@ -115,7 +119,8 @@ namespace AdminProject.View.GestionDesLIeux
 
         private void txtlatitude_LostFocus(object sender, RoutedEventArgs e)
         {
-            bool test = txtlatitude.Text.All(char.IsDigit);
+            Double x = 0;
+            bool test = Double.TryParse(txtlatitude.Text, out x);
             if (txtlatitude.Text == "" || test == false)
             {
                 txtlatitude.BorderBrush = new SolidColorBrush(Windows.UI.Colors.Red);
@@ -185,6 +190,7 @@ namespace AdminProject.View.GestionDesLIeux
 
         private async void btnmodifier_Click(object sender, RoutedEventArgs e)
         {
+            
             try
             {
                 if (testnom && testadr && testlong && testlat)
@@ -194,6 +200,12 @@ namespace AdminProject.View.GestionDesLIeux
                     MessageDialog msg = new MessageDialog("modification  avec succes");
                     msg.ShowAsync();
                     Frame.Navigate(typeof(IndexLieux));
+                }
+                else
+                {
+
+                    MessageDialog msg = new MessageDialog("verifier les champs");
+                    msg.ShowAsync();
                 }
             }
             catch (Exception ex)
