@@ -24,13 +24,13 @@ namespace AdminProject.View.GestionDesLIeux
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class IndexLieux : Page
+    public sealed partial class Indexabonnee : Page
     {
         Lieu monlieu = new Lieu();
         private MobileServiceCollection<Lieu, Lieu> lieux;
         private IMobileServiceTable<Lieu> lieutable = App.MobileService.GetTable<Lieu>();
         bool testnom = false, testadr = false, testlong = false, testlat = false;
-        public IndexLieux()
+        public Indexabonnee()
         {
             this.InitializeComponent();
             btnmodifier.Visibility = Visibility.Collapsed;
@@ -172,7 +172,7 @@ namespace AdminProject.View.GestionDesLIeux
                     await lieutable.InsertAsync(lieu);
                     MessageDialog msg = new MessageDialog("ajout avec succes");
                     msg.ShowAsync();
-                    Frame.Navigate(typeof(IndexLieux));
+                    Frame.Navigate(typeof(Indexabonnee));
                 }
                 else
                 {
@@ -199,7 +199,7 @@ namespace AdminProject.View.GestionDesLIeux
                     await lieutable.UpdateAsync(lieu);
                     MessageDialog msg = new MessageDialog("modification  avec succes");
                     msg.ShowAsync();
-                    Frame.Navigate(typeof(IndexLieux));
+                    Frame.Navigate(typeof(Indexabonnee));
                 }
                 else
                 {
@@ -222,7 +222,7 @@ namespace AdminProject.View.GestionDesLIeux
                 await lieutable.DeleteAsync(monlieu);
                 MessageDialog msg = new MessageDialog("suppression avec succes");
                 msg.ShowAsync();
-                Frame.Navigate(typeof(IndexLieux));
+                Frame.Navigate(typeof(Indexabonnee));
             }
             catch (Exception ex)
             {
