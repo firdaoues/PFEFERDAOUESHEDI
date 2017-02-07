@@ -25,6 +25,7 @@ namespace AppUser
         public MainPage()
         {
             this.InitializeComponent();
+            //init
         }
     }
 }
